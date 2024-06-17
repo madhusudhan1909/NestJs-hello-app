@@ -35,14 +35,6 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /home/ubuntu/nestjs-hello-world  
-            # Update to the correct path on your EC2 instance
-            if [ ! -d .git ]; then
-              git init
-             git remote add origin https://github.com/madhusudhan1909/NestJs-hello-app.git
-            fi
-            git fetch origin
-            git reset --hard origin/master  # Use the correct branch name
-            
             npm install
             npm run build
-            pm2 restart all || pm2 start dist/main.js --name "nest-app"
+            # pm2 restart all || pm2 start dist/main.js --name "nest-app"
