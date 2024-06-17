@@ -34,6 +34,6 @@ jobs:
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /home/ubuntu/root/nestjs-hello-world  
+            cd root/nestjs-hello-world  
             npm install
             npm run build
